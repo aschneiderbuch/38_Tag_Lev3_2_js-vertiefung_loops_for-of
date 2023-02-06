@@ -115,3 +115,4 @@ console.log(ergebnisDivTeiler)
 let output = document.querySelector("#output");
 output.innerHTML = ergebis.join(" ")
 // damit geht auch noch das letzte Komma ganz am Ende weg
+// damit die Kommas weg gehen beim anzeigen 3x join() :-(
