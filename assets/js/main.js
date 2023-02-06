@@ -104,5 +104,5 @@ console.log(ergebis)
 console.table(ergebis)
 
 document.write(`${numArr}  <br></br>`);
-document.write(ergebis);
+document.write(ergebis);    // !!! wie bekommt man das erste Komma am Zeilenanfang weg? Wo taucht es auf?
 
