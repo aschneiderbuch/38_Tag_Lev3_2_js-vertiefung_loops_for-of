@@ -21,6 +21,7 @@ while-Schleife, da Ende/RundenDurchläufe unbekannt ? */
 let testZahlen = [];
 
 let ergebis = [];
+let ergebnisDivTeiler = [];
 
 
 for (let iRundenIndex = 1; iRundenIndex < 101; iRundenIndex = iRundenIndex + 1) {
@@ -37,12 +38,12 @@ for (iRundenIndex1Bis5 = 0; iRundenIndex1Bis5 < numArr.length; iRundenIndex1Bis5
     console.log(iRundenIndex1Bis5); // 0, 1, 2, 3, 4 
 
     let ergebnisDiv = [];
-    let ergebnisDivTeiler = [];
+     ergebnisDivTeiler = [];
     keinenRest(numArr, testZahlen, ergebnisDiv, ergebnisDivTeiler);
 
 
     console.log(ergebnisDiv)
-    ergebis.push(ergebnisDiv + " " + ergebnisDivTeiler)
+    ergebis.push(ergebnisDiv + " " + ergebnisDivTeiler.join(" "))   // hier muss join hin, dann gehen alle 2ten Kommas weg
 
     console.log(ergebis);
 
@@ -83,9 +84,10 @@ function keinenRest(numArr, testZahlen, ergebnisDiv, ergebnisDivTeiler) {
             console.log((numArr[iRundenIndex1Bis5] / testZahlen[iRundenIndex]))
             // let ergebnisDiv = [];
             //  ergebnisDiv.push((numArr[iRundenIndex1Bis5] / testZahlen[iRundenIndex]))
-            ergebnisDivTeiler.push(`Die Zahl ${numArr[iRundenIndex1Bis5]} 
-           ,  kann man mit ${(numArr[iRundenIndex1Bis5]) / (testZahlen[iRundenIndex])} 
-           ,  ${testZahlen[iRundenIndex]} mal teilen <br>`)
+            ergebnisDivTeiler.push(`- ${numArr[iRundenIndex1Bis5]} 
+           lässt sich durch ${testZahlen[iRundenIndex]} 
+           teilen! Das Ergebnis ist ${(numArr[iRundenIndex1Bis5]) / (testZahlen[iRundenIndex])} 
+            <br>`)
 
             console.log(ergebnisDiv); // 5nix 22 , geht durch ? 11 Ergebnis
             console.log(ergebnisDivTeiler); // 5 nix , 22 geht durch 2 11mal,  
@@ -104,5 +106,12 @@ console.log(ergebis)
 console.table(ergebis)
 
 document.write(`${numArr}  <br></br>`);
-document.write(ergebis);    // !!! wie bekommt man das erste Komma am Zeilenanfang weg? Wo taucht es auf?
+document.write(ergebis.join(" "));    // !!! wie bekommt man das erste Komma am Zeilenanfang weg? Wo taucht es auf?
+// mit join(" ") geht nur die ersten Komma bei jeder neuen Zahl bzw. Durchlauf weg.
 
+document.write(ergebnisDivTeiler)
+console.log(ergebnisDivTeiler)
+
+let output = document.querySelector("#output");
+output.innerHTML = ergebis.join(" ")
+// damit geht auch noch das letzte Komma ganz am Ende weg
