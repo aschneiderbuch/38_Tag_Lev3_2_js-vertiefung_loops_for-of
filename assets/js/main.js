@@ -30,6 +30,9 @@ for (let iRundenIndex = 1; iRundenIndex < 101; iRundenIndex = iRundenIndex + 1) 
 // testen welche Zahlen keinen Rest geben mit Modulo %
 console.log(numArr[0] / testZahlen[0]) 
 console.log(numArr.length); // 5
+
+let iRundenIndex1Bis5 // damit hier und später drauf zugegriffen werden kann
+
 for (iRundenIndex1Bis5 = 0; iRundenIndex1Bis5 < numArr.length; iRundenIndex1Bis5 = iRundenIndex1Bis5 + 1) {
     console.log(iRundenIndex1Bis5); // 0, 1, 2, 3, 4 
 
@@ -39,7 +42,7 @@ for (iRundenIndex1Bis5 = 0; iRundenIndex1Bis5 < numArr.length; iRundenIndex1Bis5
 
 
     console.log(ergebnisDiv)
-    ergebis.push(ergebnisDiv + ", " + ergebnisDivTeiler)
+    ergebis.push(ergebnisDiv + " " + ergebnisDivTeiler)
 
     console.log(ergebis);
 
@@ -79,13 +82,14 @@ function keinenRest(numArr, testZahlen, ergebnisDiv, ergebnisDivTeiler) {
 
             console.log((numArr[iRundenIndex1Bis5] / testZahlen[iRundenIndex]))
             // let ergebnisDiv = [];
-           ergebnisDiv.push((numArr[iRundenIndex1Bis5] / testZahlen[iRundenIndex]))
-           ergebnisDivTeiler.push(`Die Zahl ${numArr[iRundenIndex]} , kann man mit ${(numArr[iRundenIndex1Bis5]) / (testZahlen[iRundenIndex])} ,  ${testZahlen[iRundenIndex]} mal teilen <br>`)
+         //  ergebnisDiv.push((numArr[iRundenIndex1Bis5] / testZahlen[iRundenIndex]))
+           ergebnisDivTeiler.push(`Die Zahl ${numArr[iRundenIndex1Bis5]} , kann man mit ${(numArr[iRundenIndex1Bis5]) / (testZahlen[iRundenIndex])} ,  ${testZahlen[iRundenIndex]} mal teilen <br>`)
 
             console.log(ergebnisDiv); // 5nix 22 , geht durch ? 11 Ergebnis
             console.log(ergebnisDivTeiler); // 5 nix , 22 geht durch 2 11mal,  
 
 
+             //return ergebnisDiv ergebnisDivTeiler;  // schick mir Ergebnis hoch
 
         }
         else {
@@ -96,4 +100,6 @@ function keinenRest(numArr, testZahlen, ergebnisDiv, ergebnisDivTeiler) {
 
 console.log(ergebis)
 
-document.write(ergebis)
+document.write(`${numArr}  <br></br>`);
+document.write(ergebis);
+
